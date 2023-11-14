@@ -2,38 +2,38 @@
 
 let myToDos = [{
     text: "vyniesť kôš",
-    completion: true
+    completion: false
 }, {
     text: "ísť nakúpiť",
     completion: false
 }, {
     text: "upratať",
-    completion: true
+    completion: false
 }, {
     text: "nakrmiť psa",
-    completion: false
+    completion: true
 },{
     text: "nakrmiť mačku",
-    completion: false
+    completion: true
 }]
 
 
-// vypísanie počtu zostávajúcich úloh
-let toDoLeft = myToDos.filter(function(oneToDo){
-    return oneToDo.completion === false
-})
+// // vypísanie počtu zostávajúcich úloh
+// let toDoLeft = myToDos.filter(function(oneToDo){
+//     return oneToDo.completion === false
+// })
 
 
-let paragraph = document.createElement("p")
-paragraph.textContent = `Počet zostávajúcich úloh:  ${toDoLeft.length}`
+// let paragraph = document.createElement("p")
+// paragraph.textContent = `Počet zostávajúcich úloh:  ${toDoLeft.length}`
 
-document.querySelector("main").prepend(paragraph)
+// document.querySelector("main").appendChild(paragraph)
 
 
 
 /////////////////////////////////////////////////////////////////////
 
-// 75. Vypísanie všetkých úloh do stránky (aj tých nesplnených)
+// Vypísanie všetkých úloh do stránky (aj tých nesplnených)
 
 // použi cyklus for
 // vytvoriť nový odstavec
@@ -51,105 +51,10 @@ for(let i = 0; i < myToDos.length; i++){
 /////////////////////////////////////////////////////////////////////////////////
 
 
-// // 82. Moderní JavaScript - ToDoAppka   filtrujeme naše úkoly filter, function, forEach
 
-// /*********************
-//  * FILTROVANIE
-//  ********************/
 
 
-// // Pre ukladanie textu z vyhľadávacieho políčka
-// const filters = {
-//     searchingText: ""
-// }
 
-
-
-
-
-// // Obecná filtrovacia funkcia
-// let renderToDos = function(ourToDos, weSearching){
-//     let ourResults = ourToDos.filter(function(oneToDo){
-//         return oneToDo.text.toLowerCase().includes(weSearching.searchingText.toLowerCase())
-//     })
-//     document.querySelector("#results-todos").innerHTML = ""
-
-//     ourResults.forEach(function(oneResult){
-//         let paragraph = document.createElement("p")
-//         paragraph.textContent = oneResult.text
-//         document.querySelector("#results-todos").appendChild(paragraph)
-//     })
-// }
-
-
-
-
-
-
-// // Načítanie textu z políčka
-// let searchText = document.querySelector("#search-text")
-// searchText.addEventListener("input", function(event){
-//    filters.searchingText = event.target.value
-   
-//    // Voláme filtrovaciu funkciu 
-//    renderToDos(myToDos, filters)
-// })
-
-
-
-
-
-// 83. Moderní JavaScript - ToDoAppka Počet neudělaných úkolů z filtrovaných výsledků
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 82. Moderní JavaScript - ToDoAppka   filtrujeme naše úkoly filter, function, forEach
 
 
 /************
@@ -168,6 +73,26 @@ let renderToDos = function(ourToDos, weSearching){
         return oneToDo.text.toLowerCase().includes(weSearching.searchingText.toLowerCase())
     })
 
+
+
+// 83. Moderní JavaScript - ToDoAppka Počet neudělaných úkolů z filtrovaných výsledků
+// KOLKO ULOH OSTAVA UROBIT
+    
+    document.querySelector("#toDosLeft").innerHTML = ""
+
+let leftToDos = ourResults.filter(function(oneToDo){
+    return oneToDo.completion === false
+})
+
+
+    // console.log(leftToDos.length)
+
+    let paragraph = document.createElement("p")
+    paragraph.textContent = `Ešte zostáva urobiť úloh: ${leftToDos.length}`
+    document.querySelector("#toDosLeft").appendChild(paragraph)
+    
+
+// VYPISOVANIE ULOH DO STRANKY
     document.querySelector("#results-todos").innerHTML = ""
 
     ourResults.forEach(function(oneResult){
