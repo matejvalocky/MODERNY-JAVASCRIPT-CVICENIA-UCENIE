@@ -2931,40 +2931,153 @@
 
 
 
-// 85. Moderní JavaScript - Výzva Formulář a vypsání 3 políček
+// // 85. Moderní JavaScript - Výzva Formulář a vypsání 3 políček
 
-document.querySelector("#formular").addEventListener("submit", function(event){
-    // vypnutie refreshu pri poslaní formulara
-    event.preventDefault()
+// document.querySelector("#formular").addEventListener("submit", function(event){
+//     // vypnutie refreshu pri poslaní formulara
+//     event.preventDefault()
 
-    // načítanie hodnôť z políčok do premenných
-    let firstName = event.target.elements.firstName.value
-    let lastName = event.target.elements.lastName.value
-    let email = event.target.elements.email.value
-
-
-
-
-    // vytvoríme odstavec a pridámem do neho text z políčka
-    let paragraph = document.createElement("p")
-    paragraph.innerHTML = `Meno: ${firstName}, <br>
-                            Priezvisko: ${lastName}, <br>
-                            Email: ${email}`
+//     // načítanie hodnôť z políčok do premenných
+//     let firstName = event.target.elements.firstName.value
+//     let lastName = event.target.elements.lastName.value
+//     let email = event.target.elements.email.value
 
 
 
 
-    // vybranie divu, kde sa má prilepiť obsah
-    document.querySelector("#from-formular").appendChild(paragraph)
+//     // vytvoríme odstavec a pridámem do neho text z políčka
+//     let paragraph = document.createElement("p")
+//     paragraph.innerHTML = `Meno: ${firstName}, <br>
+//                             Priezvisko: ${lastName}, <br>
+//                             Email: ${email}`
 
 
-    
 
-    // vymazanie obsahu políčok po odoslaní
-    event.target.elements.firstName.value = ""
-    event.target.elements.lastName.value = ""
-    event.target.elements.email.value = ""
+
+//     // vybranie divu, kde sa má prilepiť obsah
+//     document.querySelector("#from-formular").appendChild(paragraph)
+
+
+
+
+//     // vymazanie obsahu políčok po odoslaní
+//     event.target.elements.firstName.value = ""
+//     event.target.elements.lastName.value = ""
+//     event.target.elements.email.value = ""
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 86. Moderní JavaScript - Zaškrtávací boxy checkbox a zachycení zaškrtnutí a odškrtnutí
+
+
+let myCheckBox = document.querySelector("#my-check-box")
+
+myCheckBox.addEventListener("change", function(event){
+    console.log(event.target.checked)
+    console.log("Zaškrtol si prvý checkbox")
 })
+
+
+let sex = document.querySelector("#sex")
+sex.addEventListener("change", function(event){
+    console.log(event.target.checked)
+    console.log("zaškrtol si checkbox s otázkou, či si muž")
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
