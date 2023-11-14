@@ -3017,22 +3017,82 @@
 
 
 
-// 86. Moderní JavaScript - Zaškrtávací boxy checkbox a zachycení zaškrtnutí a odškrtnutí
+// // 86. Moderní JavaScript - Zaškrtávací boxy checkbox a zachycení zaškrtnutí a odškrtnutí
 
 
-let myCheckBox = document.querySelector("#my-check-box")
+// let myCheckBox = document.querySelector("#my-check-box")
 
-myCheckBox.addEventListener("change", function(event){
-    console.log(event.target.checked)
-    console.log("Zaškrtol si prvý checkbox")
-})
+// myCheckBox.addEventListener("change", function(event){
+//     console.log(event.target.checked)
+//     console.log("Zaškrtol si prvý checkbox")
+// })
 
 
-let sex = document.querySelector("#sex")
-sex.addEventListener("change", function(event){
-    console.log(event.target.checked)
-    console.log("zaškrtol si checkbox s otázkou, či si muž")
-})
+// let sex = document.querySelector("#sex")
+// sex.addEventListener("change", function(event){
+//     console.log(event.target.checked)
+//     console.log("zaškrtol si checkbox s otázkou, či si muž")
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 87. Moderní JavaScript - Společná výzva Vypisujeme text z políčka včetně checkboxu (setAttribute)
+
+
+
+
+
+
+
+
 
 
 
