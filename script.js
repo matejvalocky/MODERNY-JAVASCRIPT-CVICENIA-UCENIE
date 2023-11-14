@@ -2887,3 +2887,27 @@
 
 
 
+// 84. Moderní JavaScript - Formulář a vypsání odeslaných hodnot
+
+document.querySelector("#test-form").addEventListener("submit", function(event){
+    // vypnutie východzieho chovania formulára
+    event.preventDefault()
+
+    // prístup k obsahu inputu
+    event.target.elements.firstName.value
+
+    // vytvoríme odstavec a pridáme do neho text z políčka
+    let paragraph = document.createElement("p")
+    paragraph.textContent = event.target.elements.firstName.value
+
+    document.querySelector("#from-form").appendChild(paragraph)
+
+
+    // vyčistenie obsah políčka po odoslaní
+    event.target.elements.firstName.value = ""
+    
+})
+
+
+
+
