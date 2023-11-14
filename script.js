@@ -2887,25 +2887,83 @@
 
 
 
-// 84. Moderní JavaScript - Formulář a vypsání odeslaných hodnot
+// // 84. Moderní JavaScript - Formulář a vypsání odeslaných hodnot
 
-document.querySelector("#test-form").addEventListener("submit", function(event){
-    // vypnutie východzieho chovania formulára
+// document.querySelector("#test-form").addEventListener("submit", function(event){
+//     // vypnutie východzieho chovania formulára
+//     event.preventDefault()
+
+//     // prístup k obsahu inputu
+//     event.target.elements.firstName.value
+
+//     // vytvoríme odstavec a pridáme do neho text z políčka
+//     let paragraph = document.createElement("p")
+//     paragraph.textContent = event.target.elements.firstName.value
+
+//     document.querySelector("#from-form").appendChild(paragraph)
+
+
+//     // vyčistenie obsah políčka po odoslaní
+//     event.target.elements.firstName.value = ""
+    
+// })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 85. Moderní JavaScript - Výzva Formulář a vypsání 3 políček
+
+document.querySelector("#formular").addEventListener("submit", function(event){
+    // vypnutie refreshu pri poslaní formulara
     event.preventDefault()
 
-    // prístup k obsahu inputu
-    event.target.elements.firstName.value
+    // načítanie hodnôť z políčok do premenných
+    let firstName = event.target.elements.firstName.value
+    let lastName = event.target.elements.lastName.value
+    let email = event.target.elements.email.value
 
-    // vytvoríme odstavec a pridáme do neho text z políčka
+
+
+
+    // vytvoríme odstavec a pridámem do neho text z políčka
     let paragraph = document.createElement("p")
-    paragraph.textContent = event.target.elements.firstName.value
+    paragraph.innerHTML = `Meno: ${firstName}, <br>
+                            Priezvisko: ${lastName}, <br>
+                            Email: ${email}`
 
-    document.querySelector("#from-form").appendChild(paragraph)
 
 
-    // vyčistenie obsah políčka po odoslaní
-    event.target.elements.firstName.value = ""
+
+    // vybranie divu, kde sa má prilepiť obsah
+    document.querySelector("#from-formular").appendChild(paragraph)
+
+
     
+
+    // vymazanie obsahu políčok po odoslaní
+    event.target.elements.firstName.value = ""
+    event.target.elements.lastName.value = ""
+    event.target.elements.email.value = ""
 })
 
 
