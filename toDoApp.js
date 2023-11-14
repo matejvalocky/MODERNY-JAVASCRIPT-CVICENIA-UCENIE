@@ -18,16 +18,16 @@ let myToDos = [{
 }]
 
 
-// // vypísanie počtu zostávajúcich úloh
-// let toDoLeft = myToDos.filter(function(oneToDo){
-//     return oneToDo.completion === false
-// })
+// vypísanie počtu zostávajúcich úloh
+let toDoLeft = myToDos.filter(function(oneToDo){
+    return oneToDo.completion === false
+})
 
 
-// let paragraph = document.createElement("p")
-// paragraph.textContent = `Počet zostávajúcich úloh:  ${toDoLeft.length}`
+let paragraph = document.createElement("p")
+paragraph.textContent = `Počet všetkých zostávajúcich úloh, ktoré majú status false bez filtrovania:  ${toDoLeft.length}`
 
-// document.querySelector("main").appendChild(paragraph)
+document.querySelector("main").appendChild(paragraph)
 
 
 
@@ -75,7 +75,7 @@ let renderToDos = function(ourToDos, weSearching){
 
 
 
-// 83. Moderní JavaScript - ToDoAppka Počet neudělaných úkolů z filtrovaných výsledků
+// 83. Moderní JavaScript - ToDoAppka - Počet nesplnených úloh z filtrovaných výsledkov
 // KOLKO ULOH OSTAVA UROBIT
     
     document.querySelector("#toDosLeft").innerHTML = ""
@@ -88,7 +88,7 @@ let leftToDos = ourResults.filter(function(oneToDo){
     // console.log(leftToDos.length)
 
     let paragraph = document.createElement("p")
-    paragraph.textContent = `Ešte zostáva urobiť úloh: ${leftToDos.length}`
+    paragraph.textContent = `Ešte zostáva urobiť úloh z vyfiltrovaných (počet všetkých, čo sú false): ${leftToDos.length}`
     document.querySelector("#toDosLeft").appendChild(paragraph)
     
 
@@ -97,7 +97,7 @@ let leftToDos = ourResults.filter(function(oneToDo){
 
     ourResults.forEach(function(oneResult){
         let paragraph = document.createElement("p")
-        paragraph.textContent = oneResult.text
+        paragraph.textContent = oneResult.text + " " + "(" + oneResult.completion + ")"
         document.querySelector("#results-todos").appendChild(paragraph)
     })
     
