@@ -3084,10 +3084,48 @@
 
 
 
-// 87. Moderní JavaScript - Společná výzva Vypisujeme text z políčka včetně checkboxu (setAttribute)
+// 87. Moderný JavaScript - Vypisujeme text z políčka vrátane checkboxu (setAttribute)
 
 
+let myForm = document.querySelector("#my-form")
+let count = 0; // počet
 
+myForm.addEventListener("submit", function(event){
+    // vypneme východzie chovanie formulara (refresh)
+    event.preventDefault()
+
+    // načítanie hodnoty z políčka (v našom prípade je to task)
+    event.target.elements.task.value
+
+    // count zvyšujeme o 1
+    count = count + 1 
+    // count+ = 1 (toto je ten isty zapis)
+
+    // vytvorenie inputu s typom checkbox
+    let input = document.createElement("input")
+    input.type = "checkbox"
+
+    // definovanie input id 
+    input.id = `testovací-${count}`
+
+    // zobrazenie inputu (pridanie potomka) do tagu s id results
+    document.querySelector("#results").appendChild(input)
+
+    // vytvorenie label tagu
+    let label = document.createElement("label")
+
+    // do label tagu vložíme textový obsah taký, aký zadáme do políčka
+    label.textContent = event.target.elements.task.value 
+
+    // nastavenie atributu for v label tagu na testovací + zvýšený count
+    label.setAttribute("for", `testovací-${count}`) 
+
+    // pridanie labelu (pridanie potomka) do divu s id results
+    document.querySelector("#results").appendChild(label)
+
+    // vyčistenie políčka na prázdny string
+    event.target.elements.task.value = ""
+})
 
 
 
