@@ -3129,7 +3129,165 @@
 
 
 
+// // 88. roletka s výberom
 
+// let mySelect = document.querySelector("#my-select")
+
+// console.log(mySelect)
+
+
+// mySelect.addEventListener("change", function(event){
+//     console.log(event.target.value)
+// })
+
+
+
+
+
+
+
+
+
+
+// // 89. eventy mouseenter a mouseleave
+
+// // 1. mouse events
+
+// let buttonMouseEnter = document.querySelector("#mouse-enter-button")
+
+// buttonMouseEnter.addEventListener("mouseenter", function(event){
+//     console.log("Event nabehutia myši na tlačítko")
+// })
+
+
+
+// let buttonMouseLeave = document.querySelector("#mouse-leave-button")
+
+// buttonMouseLeave.addEventListener("mouseleave", function(event){
+//     console.log("Event opustenia myši z tlačítka")
+// })
+
+
+// // 2. keyboard events
+
+// document.querySelector("body").addEventListener("keydown", function(event){
+//     console.log("klávesa bola stlačená nadol s opakovaním pri držaní KEYDOWN")
+// })
+
+// document.querySelector("body").addEventListener("keyup", function(event){
+//     console.log("klávesa bola pustená nahor KEYUP")
+// })
+
+// document.querySelector("body").addEventListener("keypress", function(event){
+//     console.log("klávesa bola stlačená nadol KEYPRESS")
+// })
+
+
+// // zachytenie hodnoty z klávesnice pomocou event.key
+
+// document.querySelector("body").addEventListener("keyup", function(event){
+//     console.log(event.key)
+// })
+
+
+
+
+
+
+
+
+
+// // 90. Meníme štýly pomocou javascriptu
+
+// // vybratie elementu (h1)
+// let heading = document.querySelector("h1")
+
+// heading.addEventListener("mouseenter", function(event){
+// // meníme štýly takto
+// heading.style.color = "blue"
+// })
+
+// heading.addEventListener("mouseleave", function(event){
+//     heading.style.color = "green"
+// })
+
+
+
+
+
+// // // meníme veľkosť písma
+// // heading.style.fontSize = "50px"
+
+
+// // // zmiznutie elementu
+// // heading.style.display = "none"
+
+
+// // // vypnutie tučnoty písma
+// // heading.style.fontWeight = 400
+
+
+
+
+
+// // 91. Posúvanie štvorček do všetkých strán
+
+// let square = document.querySelector(".square")
+
+// let newLeft = null;
+// let newTop = null;
+
+// document.querySelector("body").addEventListener("keydown", function(event){
+//     if(event.key === "ArrowLeft"){
+//         newLeft = newLeft - 10
+//         square.style.left = newLeft + "px"
+//     } else if (event.key === "ArrowRight") {
+//         newLeft = newLeft + 10
+//         square.style.left = newLeft + "px"
+//     } else if (event.key === "ArrowUp"){
+//         newTop = newTop - 10
+//         square.style.top = newTop + "px"
+//     } else if (event.key === "ArrowDown"){
+//         newTop = newTop + 10
+//         square.style.top = newTop + "px"
+//     } 
+// })
+
+
+// // // posúvanie dolu
+// // square.style.top = "10px"
+
+// // // posúvanie hore
+// // square.style.top = "-10px"
+
+// // // posúvanie do prava
+// // square.style.left = "20px"
+
+// // // posúvanie do ľava
+// // square.style.left = "-20px"
+
+
+
+
+
+// // 92. GetComputedStyle a vyťahovanie informácii o štýloch
+
+// heading = document.querySelector("h1")
+
+// // tento výpis štýlov nefunguje
+// console.log(heading.style.color)
+
+// // tento výpis štýlov funguje
+// let style = getComputedStyle(heading)
+// console.log(style.color) // vypísanie farby písma
+// console.log(style.backgroundColor)  // vypísanie farby pozadia
+// console.log(style)  // vypísanie všetkých štýlov elementu
+
+
+
+
+
+// 93. Zadávame text do políčka a podľa toho sa mení farba pozadia
 
 
 
