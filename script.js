@@ -3287,8 +3287,25 @@
 
 
 
-// 93. Zadávame text do políčka a podľa toho sa mení farba pozadia
+// // 93. Zadávame text do políčka a podľa toho sa mení farba pozadia
 
+
+// // zachytenie formulára
+// let myForm = document.querySelector("#my-form")
+// // zachytenie body
+// let myBody = document.querySelector("body")
+
+// myForm.addEventListener("submit", function(event){
+//     event.preventDefault()
+
+//     let inputColor = event.target.elements.color.value
+
+//     myBody.style.backgroundColor = inputColor
+
+//     event.target.elements.color.value = ""
+
+
+// })
 
 
 
