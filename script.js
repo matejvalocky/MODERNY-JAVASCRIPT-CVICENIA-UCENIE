@@ -3383,6 +3383,35 @@ firstItemMenu.addEventListener("click", function(){
 })
 
 
+let secondItemMenu =  document.querySelector(".second-item-menu")
+let scrollGoal2 = document.querySelector(".scroll-goal2").offsetTop // kde sa to presne nachádza
+
+console.log(scrollGoal2)
+
+
+secondItemMenu.addEventListener("click", function(){
+    window.scrollTo({
+        top: scrollGoal2,
+        behavior: "smooth"
+    })
+})
+
+
+
+let thirdItemMenu =  document.querySelector(".third-item-menu")
+let scrollGoal3 = document.querySelector(".scroll-goal3").offsetTop // kde sa to presne nachádza
+
+console.log(scrollGoal3)
+
+
+thirdItemMenu.addEventListener("click", function(){
+    window.scrollTo({
+        top: scrollGoal3,
+        behavior: "smooth"
+    })
+})
+
+
 
 
 
