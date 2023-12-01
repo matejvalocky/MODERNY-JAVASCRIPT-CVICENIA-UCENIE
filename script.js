@@ -3312,6 +3312,29 @@
 
 
 
+// // 94. Moderní JavaScript - Událost Scrollování a doscrollování nakonec
+
+
+// window.addEventListener("scroll", function(){
+//     let scrolled = window.scrollY // kolko sme skrolovali
+//     let scrollable = document.documentElement.scrollHeight - window.innerHeight  // maximálne zaskrolovanie 
+//     console.log(scrollable)
+//     console.log(scrolled)
+
+//     if (Math.ceil(scrolled) === scrollable){
+//         alert("Doskroloval si na koniec")
+//     }
+
+//     // if (Math.ceil(scrolled) > 1000){
+//     //     alert("Doskroloval si nad 1000px")
+//     // }
+// })
+
+
+
+
+
+
 
 
 
