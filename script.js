@@ -3367,6 +3367,26 @@
 
 
 
+// 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop) 
+ 
+let firstItemMenu =  document.querySelector(".first-item-menu")
+let scrollGoal = document.querySelector(".scroll-goal").offsetTop // kde sa to presne nachádza
+
+console.log(scrollGoal)
+
+
+firstItemMenu.addEventListener("click", function(){
+    window.scrollTo({
+        top: scrollGoal,
+        behavior: "smooth"
+    })
+})
+
+
+
+
+
+
 
 
 

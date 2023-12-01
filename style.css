@@ -87,3 +87,38 @@
 
 /* 96. Moderní JavaScript - scrollTo a plynulé scrollování  koniec*/
 
+
+
+
+
+
+/* 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop)  */
+
+
+
+
+/* 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop)  koniec*/
+
+nav ul{
+    padding: 0;
+}
+
+nav ul li{
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav li a{
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid black;
+    padding: 5px 15px;
+    border-radius: 100px;
+    color: rgb(89, 0, 255);
+    background: yellowgreen;
+}
+
+nav li a:hover{
+    background: red;
+}
+
