@@ -54,10 +54,26 @@
 
 
 
+/* 95. Moderní JavaScript - Scrollování a praktický příklad s tlačítkem Nahoru */
 
+/* body{
+    padding: 0 100px;
+}
 
-
-
+.top-page{
+    text-decoration: none;
+    background: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    display: none;
+} */
+ 
+/* 95. Moderní JavaScript - Scrollování a praktický příklad s tlačítkem Nahoru  koniec*/
 
 
 
