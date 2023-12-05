@@ -3450,37 +3450,68 @@
 
 
 
-// 99. Moderní JavaScript - LocalStorage JSON a převod na string a zase zpět ( stringify, parse)
+// // 99. Moderní JavaScript - LocalStorage JSON a převod na string a zase zpět ( stringify, parse)
 
 
-// localStorage ukladá iba stringy, ale dajú sa do neho uložiť aj iné objekty, polia ...
+// // localStorage ukladá iba stringy, ale dajú sa do neho uložiť aj iné objekty, polia ...
 
 
-// JSON - prevedenie čohokoľvek (napríklad objekt) na string
+// // JSON - prevedenie čohokoľvek (napríklad objekt) na string
 
-const user = {
-    firstName: "David",
-    age: 27
-}
-
-
-
-let userJSON = JSON.stringify(user)
-localStorage.setItem("user", userJSON)
+// const user = {
+//     firstName: "David",
+//     age: 27
+// }
 
 
 
-// vrátenie naspäť
+// let userJSON = JSON.stringify(user)
+// localStorage.setItem("user", userJSON)
 
-let userFromLS = localStorage.getItem("user")
 
-console.log(userFromLS) // je to string
 
-let myUser = JSON.parse(userFromLS) // prevedenie stringu na v našom prípade objekt
+// // vrátenie naspäť
 
-console.log(myUser) // je to už normálny objekt
+// let userFromLS = localStorage.getItem("user")
 
-console.log(`Ahoj, ja som ${myUser.firstName} a mám ${myUser.age} rokov`)
+// console.log(userFromLS) // je to string
+
+// let myUser = JSON.parse(userFromLS) // prevedenie stringu na v našom prípade objekt
+
+// console.log(myUser) // je to už normálny objekt
+
+// console.log(`Ahoj, ja som ${myUser.firstName} a mám ${myUser.age} rokov`)
+
+
+
+
+// 100. Moderní JavaScript - LocalStorage načítáme data z políčka do localStorage
+
+// ÚLOHA:
+// 1. vytvorenie políčka a odosielacieho tlačídla v HTML
+// 2. keď tam dačo zadáme do políčka a dáme odoslať, tak chceme, aby sa nám to vypísalo pod tým políčkom a to sa stane s každým záznamom, bude sa to tam pridávať pod sebou do odstavca
+// 3. tieto dáta z políčka uložíme do localStorage a z neho tam budeme ťahať dáta a vypisovať
+let myArray = []
+
+let myForm = document.querySelector("#test-form")
+myForm.addEventListener("submit", function(event){
+    event.preventDefault()
+    myArray.push(event.target.elements.firstName.value)
+    myArrayToLS = JSON.stringify(myArray)
+    localStorage.setItem("users", myArrayToLS)
+
+    event.target.elements.firstName.value = ""
+    
+})
+
+
+
+
+
+
+
+
+
 
 
 
