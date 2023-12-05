@@ -3515,10 +3515,19 @@ myForm.addEventListener("submit", function(event){
 
     document.querySelector("#my-users").appendChild(paragraph)
     
+})
 
+// POKRACOVANIE K 101. 
+// 102. Moderní JavaScript - LocalStorage vytahujeme data z LocalStorage při načtení stránky
 
+let myPresentArray = localStorage.getItem("users")
 
-    
+let myPresentArrayJ = JSON.parse(myPresentArray)
+
+myPresentArrayJ.forEach(function(oneUser){
+    let paragraph = document.createElement("p")
+    paragraph.textContent = oneUser
+    document.querySelector("#my-users").appendChild(paragraph)
 })
 
 
