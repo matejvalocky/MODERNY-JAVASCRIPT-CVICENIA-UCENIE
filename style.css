@@ -94,12 +94,7 @@
 
 /* 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop)  */
 
-
-
-
-/* 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop)  koniec*/
-
-nav ul{
+/* nav ul{
     padding: 0;
 }
 
@@ -120,5 +115,10 @@ nav li a{
 
 nav li a:hover{
     background: red;
-}
+} */
+
+
+/* 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop)  koniec*/
+
+
 

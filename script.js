@@ -3367,49 +3367,49 @@
 
 
 
-// 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop) 
+// // 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop) 
  
-let firstItemMenu =  document.querySelector(".first-item-menu")
-let scrollGoal = document.querySelector(".scroll-goal").offsetTop // kde sa to presne nachádza
+// let firstItemMenu =  document.querySelector(".first-item-menu")
+// let scrollGoal = document.querySelector(".scroll-goal").offsetTop // kde sa to presne nachádza
 
-console.log(scrollGoal)
-
-
-firstItemMenu.addEventListener("click", function(){
-    window.scrollTo({
-        top: scrollGoal,
-        behavior: "smooth"
-    })
-})
+// console.log(scrollGoal)
 
 
-let secondItemMenu =  document.querySelector(".second-item-menu")
-let scrollGoal2 = document.querySelector(".scroll-goal2").offsetTop // kde sa to presne nachádza
-
-console.log(scrollGoal2)
-
-
-secondItemMenu.addEventListener("click", function(){
-    window.scrollTo({
-        top: scrollGoal2,
-        behavior: "smooth"
-    })
-})
+// firstItemMenu.addEventListener("click", function(){
+//     window.scrollTo({
+//         top: scrollGoal,
+//         behavior: "smooth"
+//     })
+// })
 
 
+// let secondItemMenu =  document.querySelector(".second-item-menu")
+// let scrollGoal2 = document.querySelector(".scroll-goal2").offsetTop // kde sa to presne nachádza
 
-let thirdItemMenu =  document.querySelector(".third-item-menu")
-let scrollGoal3 = document.querySelector(".scroll-goal3").offsetTop // kde sa to presne nachádza
-
-console.log(scrollGoal3)
+// console.log(scrollGoal2)
 
 
-thirdItemMenu.addEventListener("click", function(){
-    window.scrollTo({
-        top: scrollGoal3,
-        behavior: "smooth"
-    })
-})
+// secondItemMenu.addEventListener("click", function(){
+//     window.scrollTo({
+//         top: scrollGoal2,
+//         behavior: "smooth"
+//     })
+// })
+
+
+
+// let thirdItemMenu =  document.querySelector(".third-item-menu")
+// let scrollGoal3 = document.querySelector(".scroll-goal3").offsetTop // kde sa to presne nachádza
+
+// console.log(scrollGoal3)
+
+
+// thirdItemMenu.addEventListener("click", function(){
+//     window.scrollTo({
+//         top: scrollGoal3,
+//         behavior: "smooth"
+//     })
+// })
 
 
 
