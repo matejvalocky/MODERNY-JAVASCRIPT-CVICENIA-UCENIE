@@ -3413,37 +3413,79 @@
 
 
 
-// 98. Moderní JavaScript - LocalStorage ukládáme data setItem, getItem, removeItem, clear
+// // 98. Moderní JavaScript - LocalStorage ukládáme data setItem, getItem, removeItem, clear
 
 
-// úložisko - volá sa localStorage
-// v prehliadači dať F12 - application - local storage
+// // úložisko - volá sa localStorage
+// // v prehliadači dať F12 - application - local storage
 
 
-// uloženie do localStorage
-// key = location, firstName
-// value = Martin, David
-localStorage.setItem("location", "Martin")
-localStorage.setItem("firstName", "David")
+// // uloženie do localStorage
+// // key = location, firstName
+// // value = Martin, David
+// localStorage.setItem("location", "Martin")
+// localStorage.setItem("firstName", "David")
 
 
-// update položky
-localStorage.setItem("location", "Praha")
-localStorage.setItem("firstName", "Matej")
+// // update položky
+// localStorage.setItem("location", "Praha")
+// localStorage.setItem("firstName", "Matej")
 
 
-// získanie položky
-console.log(localStorage.getItem("location")) 
-console.log(localStorage.getItem("firstName"))
+// // získanie položky
+// console.log(localStorage.getItem("location")) 
+// console.log(localStorage.getItem("firstName"))
 
 
-// zmazanie položky
-// localStorage.removeItem("location")
-// localStorage.removeItem("firstName")
+// // zmazanie položky
+// // localStorage.removeItem("location")
+// // localStorage.removeItem("firstName")
 
 
-// zmazanie všetkého v localStorage
-localStorage.clear()
+// // zmazanie všetkého v localStorage
+// localStorage.clear()
+
+
+
+
+
+
+// 99. Moderní JavaScript - LocalStorage JSON a převod na string a zase zpět ( stringify, parse)
+
+
+// localStorage ukladá iba stringy, ale dajú sa do neho uložiť aj iné objekty, polia ...
+
+
+// JSON - prevedenie čohokoľvek (napríklad objekt) na string
+
+const user = {
+    firstName: "David",
+    age: 27
+}
+
+
+
+let userJSON = JSON.stringify(user)
+localStorage.setItem("user", userJSON)
+
+
+
+// vrátenie naspäť
+
+let userFromLS = localStorage.getItem("user")
+
+console.log(userFromLS) // je to string
+
+let myUser = JSON.parse(userFromLS) // prevedenie stringu na v našom prípade objekt
+
+console.log(myUser) // je to už normálny objekt
+
+console.log(`Ahoj, ja som ${myUser.firstName} a mám ${myUser.age} rokov`)
+
+
+
+
+
 
 
 
