@@ -3413,6 +3413,44 @@
 
 
 
+// 98. Moderní JavaScript - LocalStorage ukládáme data setItem, getItem, removeItem, clear
+
+
+// úložisko - volá sa localStorage
+// v prehliadači dať F12 - application - local storage
+
+
+// uloženie do localStorage
+// key = location, firstName
+// value = Martin, David
+localStorage.setItem("location", "Martin")
+localStorage.setItem("firstName", "David")
+
+
+// update položky
+localStorage.setItem("location", "Praha")
+localStorage.setItem("firstName", "Matej")
+
+
+// získanie položky
+console.log(localStorage.getItem("location")) 
+console.log(localStorage.getItem("firstName"))
+
+
+// zmazanie položky
+// localStorage.removeItem("location")
+// localStorage.removeItem("firstName")
+
+
+// zmazanie všetkého v localStorage
+localStorage.clear()
+
+
+
+
+
+
+
 
 
 
