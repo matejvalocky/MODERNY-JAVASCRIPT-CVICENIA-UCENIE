@@ -3485,50 +3485,50 @@
 
 
 
-// 100. Moderní JavaScript - LocalStorage načítáme data z políčka do localStorage
+// // 100. Moderní JavaScript - LocalStorage načítáme data z políčka do localStorage
 
-// ÚLOHA:
-// 1. vytvorenie políčka a odosielacieho tlačídla v HTML
-// 2. keď tam dačo zadáme do políčka a dáme odoslať, tak chceme, aby sa nám to vypísalo pod tým políčkom a to sa stane s každým záznamom, bude sa to tam pridávať pod sebou do odstavca
-// 3. tieto dáta z políčka uložíme do localStorage a z neho tam budeme ťahať dáta a vypisovať
-let myArray = []
+// // ÚLOHA:
+// // 1. vytvorenie políčka a odosielacieho tlačídla v HTML
+// // 2. keď tam dačo zadáme do políčka a dáme odoslať, tak chceme, aby sa nám to vypísalo pod tým políčkom a to sa stane s každým záznamom, bude sa to tam pridávať pod sebou do odstavca
+// // 3. tieto dáta z políčka uložíme do localStorage a z neho tam budeme ťahať dáta a vypisovať
+// let myArray = []
 
-let myForm = document.querySelector("#test-form")
-myForm.addEventListener("submit", function(event){
-    event.preventDefault()
-    myArray.push(event.target.elements.firstName.value)
-    myArrayToLS = JSON.stringify(myArray)
-    localStorage.setItem("users", myArrayToLS)
+// let myForm = document.querySelector("#test-form")
+// myForm.addEventListener("submit", function(event){
+//     event.preventDefault()
+//     myArray.push(event.target.elements.firstName.value)
+//     myArrayToLS = JSON.stringify(myArray)
+//     localStorage.setItem("users", myArrayToLS)
 
-    event.target.elements.firstName.value = ""
+//     event.target.elements.firstName.value = ""
 
-// POKRACOVANIE k 100. 
-// 101. Moderní JavaScript - LocalStorage vypisujeme data z LocalStorage do stránky
+// // POKRACOVANIE k 100. 
+// // 101. Moderní JavaScript - LocalStorage vypisujeme data z LocalStorage do stránky
 
-    let myArrayFromLS = localStorage.getItem("users")
+//     let myArrayFromLS = localStorage.getItem("users")
     
-    let myArrayFromLSj = JSON.parse(myArrayFromLS)
+//     let myArrayFromLSj = JSON.parse(myArrayFromLS)
 
-    let paragraph = document.createElement("p")
+//     let paragraph = document.createElement("p")
 
-    paragraph.textContent = myArrayFromLSj[myArrayFromLSj.length - 1]
+//     paragraph.textContent = myArrayFromLSj[myArrayFromLSj.length - 1]
 
-    document.querySelector("#my-users").appendChild(paragraph)
+//     document.querySelector("#my-users").appendChild(paragraph)
     
-})
+// })
 
-// POKRACOVANIE K 101. 
-// 102. Moderní JavaScript - LocalStorage vytahujeme data z LocalStorage při načtení stránky
+// // POKRACOVANIE K 101. 
+// // 102. Moderní JavaScript - LocalStorage vytahujeme data z LocalStorage při načtení stránky
 
-let myPresentArray = localStorage.getItem("users")
+// let myPresentArray = localStorage.getItem("users")
 
-let myPresentArrayJ = JSON.parse(myPresentArray)
+// let myPresentArrayJ = JSON.parse(myPresentArray)
 
-myPresentArrayJ.forEach(function(oneUser){
-    let paragraph = document.createElement("p")
-    paragraph.textContent = oneUser
-    document.querySelector("#my-users").appendChild(paragraph)
-})
+// myPresentArrayJ.forEach(function(oneUser){
+//     let paragraph = document.createElement("p")
+//     paragraph.textContent = oneUser
+//     document.querySelector("#my-users").appendChild(paragraph)
+// })
 
 
 
