@@ -3501,8 +3501,27 @@ myForm.addEventListener("submit", function(event){
     localStorage.setItem("users", myArrayToLS)
 
     event.target.elements.firstName.value = ""
+
+// POKRACOVANIE k 100. 
+// 101. Moderní JavaScript - LocalStorage vypisujeme data z LocalStorage do stránky
+
+    let myArrayFromLS = localStorage.getItem("users")
+    
+    let myArrayFromLSj = JSON.parse(myArrayFromLS)
+
+    let paragraph = document.createElement("p")
+
+    paragraph.textContent = myArrayFromLSj[myArrayFromLSj.length - 1]
+
+    document.querySelector("#my-users").appendChild(paragraph)
+    
+
+
+
     
 })
+
+
 
 
 
