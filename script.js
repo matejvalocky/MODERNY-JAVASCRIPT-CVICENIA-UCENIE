@@ -3230,41 +3230,41 @@
 
 
 
-// // 91. Posúvanie štvorček do všetkých strán
+// 91. Posúvanie štvorček do všetkých strán
 
-// let square = document.querySelector(".square")
+let square = document.querySelector(".square")
 
-// let newLeft = null;
-// let newTop = null;
+let newLeft = null;
+let newTop = null;
 
-// document.querySelector("body").addEventListener("keydown", function(event){
-//     if(event.key === "ArrowLeft"){
-//         newLeft = newLeft - 10
-//         square.style.left = newLeft + "px"
-//     } else if (event.key === "ArrowRight") {
-//         newLeft = newLeft + 10
-//         square.style.left = newLeft + "px"
-//     } else if (event.key === "ArrowUp"){
-//         newTop = newTop - 10
-//         square.style.top = newTop + "px"
-//     } else if (event.key === "ArrowDown"){
-//         newTop = newTop + 10
-//         square.style.top = newTop + "px"
-//     } 
-// })
+document.querySelector("body").addEventListener("keydown", function(event){
+    if(event.key === "ArrowLeft"){
+        newLeft = newLeft - 10
+        square.style.left = newLeft + "px"
+    } else if (event.key === "ArrowRight") {
+        newLeft = newLeft + 10
+        square.style.left = newLeft + "px"
+    } else if (event.key === "ArrowUp"){
+        newTop = newTop - 10
+        square.style.top = newTop + "px"
+    } else if (event.key === "ArrowDown"){
+        newTop = newTop + 10
+        square.style.top = newTop + "px"
+    } 
+})
 
 
-// // // posúvanie dolu
-// // square.style.top = "10px"
+// // posúvanie dolu
+// square.style.top = "10px"
 
-// // // posúvanie hore
-// // square.style.top = "-10px"
+// // posúvanie hore
+// square.style.top = "-10px"
 
-// // // posúvanie do prava
-// // square.style.left = "20px"
+// // posúvanie do prava
+// square.style.left = "20px"
 
-// // // posúvanie do ľava
-// // square.style.left = "-20px"
+// // posúvanie do ľava
+// square.style.left = "-20px"
 
 
 
@@ -3613,7 +3613,7 @@
 
 
 
-// 88. Moderní JavaScript - Roletka a práce s hodnotami (select, option, change)
+
 
 
 
