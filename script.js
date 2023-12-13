@@ -3547,6 +3547,52 @@
 
 
 
+// 104. Moderní JavaScript - Posíláme do localStorage obsah tří políček najednou
+
+let myForm = document.querySelector("#test-form")
+
+
+if(localStorage.getItem("criminals") == null){
+    var myArray = []
+} else {
+    myArray = JSON.parse(localStorage.getItem("criminals"))
+}
+
+
+myForm.addEventListener("submit", function(event){
+
+            event.preventDefault()
+
+             if(event.target.elements.firstName.value == ""){
+                alert("Zadaj meno!")
+             } else if (event.target.elements.secondName.value == "") {
+                alert("Zadaj priezvisko!")
+             } else if (event.target.elements.crime.value == "") {
+                alert("Zadaj zločin!")
+             } else {
+                myArray.push({
+                    id: "",
+                    firstName: event.target.elements.firstName.value,
+                    secondName: event.target.elements.secondName.value,
+                    crime: event.target.elements.crime.value
+                }) 
+
+                event.target.elements.firstName.value = ""
+                event.target.elements.secondName.value = ""
+                event.target.elements.crime.value = ""
+             }
+            
+    
+            myArrayJSON = JSON.stringify(myArray)
+            localStorage.setItem("criminals", myArrayJSON)
+
+})
+
+
+
+
+
+
 
 
 
