@@ -3607,6 +3607,8 @@ toList.addEventListener("click", function(){
       paragraph.innerHTML =   `Meno: ${oneCriminal.firstName}, <br>
                               Priezvisko: ${oneCriminal.secondName} <br>
                               Zločin: ${oneCriminal.crime} ` 
+
+      paragraph.classList.add("basic-styles")                        
                               
       document.querySelector(".list-criminals").appendChild(paragraph)                        
    })
