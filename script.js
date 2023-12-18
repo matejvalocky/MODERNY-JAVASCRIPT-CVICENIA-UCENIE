@@ -3558,7 +3558,7 @@ if(localStorage.getItem("criminals") == null){
     myArray = JSON.parse(localStorage.getItem("criminals"))
 }
 
-
+// odosielanie formulára
 myForm.addEventListener("submit", function(event){
 
             event.preventDefault()
@@ -3588,9 +3588,31 @@ myForm.addEventListener("submit", function(event){
 
 })
 
+// 105. Moderní JavaScript - Vypisujeme data z localStorage zpět do stránky po kliknutí
+// vypisovanie späť do stránky
+let toList = document.querySelector(".to-list")
 
+toList.addEventListener("click", function(){
+   let myStorage = localStorage.getItem("criminals")
 
+   myStorageJSON = JSON.parse(myStorage)
 
+   // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
+   document.querySelector(".list-criminals").innerHTML = ""
+   // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
+
+   myStorageJSON.forEach(function(oneCriminal){
+      let paragraph = document.createElement("p")
+
+      paragraph.innerHTML =   `Meno: ${oneCriminal.firstName}, <br>
+                              Priezvisko: ${oneCriminal.secondName} <br>
+                              Zločin: ${oneCriminal.crime} ` 
+                              
+      document.querySelector(".list-criminals").appendChild(paragraph)                        
+   })
+})
+
+// 105. Moderní JavaScript - Vypisujeme data z localStorage zpět do stránky po kliknutí KONIEC
 
 
 
