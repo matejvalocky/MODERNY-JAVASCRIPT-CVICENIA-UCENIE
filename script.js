@@ -1223,7 +1223,7 @@
 
 
 
-    
+
 
 
 
@@ -1284,7 +1284,7 @@
 // for(let i = 0; i < toDo.length; i++){
 //     console.log(`${i + 1}. ${toDo[i]} `)
 //     } 
-   
+
 
 
 
@@ -1344,7 +1344,7 @@
 // // 59. Moderní JavaScript - Pole a indexOf
 
 // // zisťuje, index daného prvku v poli
-   
+
 
 // // najprv si definujeme pole
 // let employees = ["David", "Marek", "Jana"]
@@ -1585,7 +1585,7 @@
 
 // console.log(books[resultPoleObjektov])
 // // vypísanie celého objektu
-    
+
 
 
 
@@ -1628,7 +1628,7 @@
 //     }]
 
 
-    
+
 // // riešenie
 
 // // zadanie otázky pomocou prompt
@@ -2758,7 +2758,7 @@
 //     //7. filtrovanie
 //     //8. vypísanie výsledkov do stránky
 
-    
+
 
 
 // //3. načítanie dát z políčka 
@@ -2768,7 +2768,7 @@
 // //5. načítanie informácii z políčka
 //      filters.searchText = event.target.value
 //      renderCriminals(criminals, filters)
-     
+
 // })
 
 
@@ -2795,7 +2795,7 @@
 
 
 
-    
+
 //     //8A. vypísanie výsledkov
 //     arrayResult.forEach(function(oneSuspect){
 //         let paragraph = document.createElement("p")
@@ -2905,7 +2905,7 @@
 
 //     // vyčistenie obsah políčka po odoslaní
 //     event.target.elements.firstName.value = ""
-    
+
 // })
 
 
@@ -3338,7 +3338,7 @@
 // window.addEventListener("scroll", function(){
 //     let scrolled = window.scrollY
 //     let scrollable = document.documentElement.scrollHeight - window.innerHeight
-    
+
 //     // if(Math.ceil(scrolled) === scrollable){
 //     //     let toTop = document.querySelector(".top-page")
 //     //     toTop.style.display = "block"
@@ -3356,7 +3356,7 @@
 //             toTop.style.display = "none"
 //         })
 //     }
-    
+
 // })
 
 
@@ -3368,7 +3368,7 @@
 
 
 // // 97. Moderní JavaScript - Po kliknutí na menu scrollujeme plynule kamkoliv na stránce (offsetTop) 
- 
+
 // let firstItemMenu =  document.querySelector(".first-item-menu")
 // let scrollGoal = document.querySelector(".scroll-goal").offsetTop // kde sa to presne nachádza
 
@@ -3516,7 +3516,7 @@
 // // 101. Moderní JavaScript - LocalStorage vypisujeme data z LocalStorage do stránky
 
 //     let myArrayFromLS = localStorage.getItem("users")
-    
+
 //     let myArrayFromLSj = JSON.parse(myArrayFromLS)
 
 //     let paragraph = document.createElement("p")
@@ -3524,7 +3524,7 @@
 //     paragraph.textContent = myArrayFromLSj[myArrayFromLSj.length - 1]
 
 //     document.querySelector("#my-users").appendChild(paragraph)
-    
+
 // })
 
 // // POKRACOVANIE K 101. 
@@ -3552,39 +3552,39 @@
 let myForm = document.querySelector("#test-form")
 
 
-if(localStorage.getItem("criminals") == null){
-    var myArray = []
+if (localStorage.getItem("criminals") == null) {
+   var myArray = []
 } else {
-    myArray = JSON.parse(localStorage.getItem("criminals"))
+   myArray = JSON.parse(localStorage.getItem("criminals"))
 }
 
 // odosielanie formulára
-myForm.addEventListener("submit", function(event){
+myForm.addEventListener("submit", function (event) {
 
-            event.preventDefault()
+   event.preventDefault()
 
-             if(event.target.elements.firstName.value == ""){
-                alert("Zadaj meno!")
-             } else if (event.target.elements.secondName.value == "") {
-                alert("Zadaj priezvisko!")
-             } else if (event.target.elements.crime.value == "") {
-                alert("Zadaj zločin!")
-             } else {
-                myArray.push({
-                    id: "",
-                    firstName: event.target.elements.firstName.value,
-                    secondName: event.target.elements.secondName.value,
-                    crime: event.target.elements.crime.value
-                }) 
+   if (event.target.elements.firstName.value == "") {
+      alert("Zadaj meno!")
+   } else if (event.target.elements.secondName.value == "") {
+      alert("Zadaj priezvisko!")
+   } else if (event.target.elements.crime.value == "") {
+      alert("Zadaj zločin!")
+   } else {
+      myArray.push({
+         id: "",
+         firstName: event.target.elements.firstName.value,
+         secondName: event.target.elements.secondName.value,
+         crime: event.target.elements.crime.value
+      })
 
-                event.target.elements.firstName.value = ""
-                event.target.elements.secondName.value = ""
-                event.target.elements.crime.value = ""
-             }
-            
-    
-            myArrayJSON = JSON.stringify(myArray)
-            localStorage.setItem("criminals", myArrayJSON)
+      event.target.elements.firstName.value = ""
+      event.target.elements.secondName.value = ""
+      event.target.elements.crime.value = ""
+   }
+
+
+   myArrayJSON = JSON.stringify(myArray)
+   localStorage.setItem("criminals", myArrayJSON)
 
 })
 
@@ -3592,26 +3592,42 @@ myForm.addEventListener("submit", function(event){
 // vypisovanie späť do stránky
 let toList = document.querySelector(".to-list")
 
-toList.addEventListener("click", function(){
-   let myStorage = localStorage.getItem("criminals")
+toList.addEventListener("click", function () {
+   // 108. Moderní JavaScript - Hlášky pro prázdnou databázi zločinců (prázdný localStorage)
 
-   myStorageJSON = JSON.parse(myStorage)
+   if (localStorage.getItem("criminals") == null) {
 
-   // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
-   document.querySelector(".list-criminals").innerHTML = ""
-   // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
-
-   myStorageJSON.forEach(function(oneCriminal){
       let paragraph = document.createElement("p")
+         paragraph.textContent = "Databaza je prázdna"
+         document.querySelector(".list-criminals").appendChild(paragraph)
 
-      paragraph.innerHTML =   `Meno: ${oneCriminal.firstName}, <br>
-                              Priezvisko: ${oneCriminal.secondName} <br>
-                              Zločin: ${oneCriminal.crime} ` 
+   } else {
+      let myStorage = localStorage.getItem("criminals")
 
-      paragraph.classList.add("basic-styles")                        
-                              
-      document.querySelector(".list-criminals").appendChild(paragraph)                        
-   })
+      myStorageJSON = JSON.parse(myStorage)
+
+      // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
+      document.querySelector(".list-criminals").innerHTML = ""
+      // 106. Moderní JavaScript - Zabraňujeme opakovanému výpisu stejného kriminálníka
+
+      myStorageJSON.forEach(function (oneCriminal) {
+         let paragraph = document.createElement("p")
+
+         paragraph.innerHTML = `Meno: ${oneCriminal.firstName}, <br>
+                                 Priezvisko: ${oneCriminal.secondName} <br>
+                                 Zločin: ${oneCriminal.crime} `
+
+         paragraph.classList.add("basic-styles")
+
+         document.querySelector(".list-criminals").appendChild(paragraph)
+      })
+   }
+
+
+// 108. Moderní JavaScript - Hlášky pro prázdnou databázi zločinců (prázdný localStorage) KONIEC
+
+
+
 })
 
 // 105. Moderní JavaScript - Vypisujeme data z localStorage zpět do stránky po kliknutí KONIEC
