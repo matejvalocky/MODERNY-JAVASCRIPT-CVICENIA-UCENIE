@@ -5,13 +5,17 @@ const names = getSavedNames()
 
 
 let myForm = document.querySelector("#test-form")
-myForm.addEventListener("submit", function(event){
+myForm.addEventListener("submit", function (event) {
     event.preventDefault()
 
     names.push({ // push =  pridanie záznamu na koniec
         id: "",
         firstName: event.target.elements.firstName.value
     })
+
+    event.target.elements.firstName.value = ""
+
+    saveNames(names)
 
 
 })
