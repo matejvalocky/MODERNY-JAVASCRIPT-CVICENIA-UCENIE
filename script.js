@@ -3598,8 +3598,8 @@ toList.addEventListener("click", function () {
    if (localStorage.getItem("criminals") == null) {
 
       let paragraph = document.createElement("p")
-         paragraph.textContent = "Databaza je prázdna"
-         document.querySelector(".list-criminals").appendChild(paragraph)
+      paragraph.textContent = "Databaza je prázdna"
+      document.querySelector(".list-criminals").appendChild(paragraph)
 
    } else {
       let myStorage = localStorage.getItem("criminals")
@@ -3624,7 +3624,7 @@ toList.addEventListener("click", function () {
    }
 
 
-// 108. Moderní JavaScript - Hlášky pro prázdnou databázi zločinců (prázdný localStorage) KONIEC
+   // 108. Moderní JavaScript - Hlášky pro prázdnou databázi zločinců (prázdný localStorage) KONIEC
 
 
 
@@ -3647,14 +3647,33 @@ let myStorage = localStorage.getItem("criminals")
 let myStorageJSON = JSON.parse(myStorage)
 
 
-nameFilter.addEventListener("input", function(event){
+nameFilter.addEventListener("input", function (event) {
    let whatWeSearch = event.target.value
 
-   let ourResults = myStorageJSON.filter(function(oneCriminal){
-     return oneCriminal.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
+   let ourResults = myStorageJSON.filter(function (oneCriminal) {
+      return oneCriminal.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
    })
 
+   document.querySelector(".filter-name").innerHTML = ""
+   document.querySelector(".list-criminals").innerHTML = ""
+
    
+
+   // 110. Moderní JavaScript - Vypisujeme filtrované zločince do stránky
+
+   ourResults.forEach(function (oneCriminal) {
+      let paragraph = document.createElement("p")
+      paragraph.innerHTML = `Meno: ${oneCriminal.firstName}, <br>
+                            Priezvisko: ${oneCriminal.secondName}, <br>
+                            Zločin: ${oneCriminal.crime}`
+
+                            
+
+     document.querySelector(".filter-name").appendChild(paragraph)                       
+   })
+
+
+ // 110. Moderní JavaScript - Vypisujeme filtrované zločince do stránky KONIEC
 })
 
 
