@@ -3638,6 +3638,38 @@ toList.addEventListener("click", function () {
 
 
 
+// 109. Moderní JavaScript - Filtrujeme zločince podle jména 
+
+// filtrovanie
+
+let nameFilter = document.querySelector(".name-filter")
+let myStorage = localStorage.getItem("criminals")
+let myStorageJSON = JSON.parse(myStorage)
+
+
+nameFilter.addEventListener("input", function(event){
+   let whatWeSearch = event.target.value
+
+   let ourResults = myStorageJSON.filter(function(oneCriminal){
+     return oneCriminal.firstName.toLowerCase().includes(whatWeSearch.toLowerCase())
+   })
+
+   
+})
+
+
+
+
+// 109. Moderní JavaScript - Filtrujeme zločince podle jména KONIEC
+
+
+
+
+
+
+
+
+
 
 
 
