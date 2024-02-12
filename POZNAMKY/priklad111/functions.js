@@ -50,6 +50,7 @@ const generateHTMLstructure = function(oneName){
 
     button.addEventListener("click", function(event){
         removeNames(oneName.id)
+        saveNames(names)
     })
 
     newSpan.textContent = oneName.firstName
