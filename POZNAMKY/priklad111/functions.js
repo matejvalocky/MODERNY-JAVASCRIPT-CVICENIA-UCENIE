@@ -25,7 +25,35 @@ const getSavedNames = function () {
     ukladá do localStorage meno z formulára 
 */
 
-const saveNames = function(oneName){
-    localStorage.setItem("names", JSON.stringify (oneName))
+const saveNames = function (oneName) {
+    localStorage.setItem("names", JSON.stringify(oneName))
+}
+
+
+/* 
+Generovanie HTML štruktúry, ktorú umiestnime do sránky po kliknutí na stlačítko "Vyôíš"
+
++ použíjeme ju tiež pre vypísanie informácii z localStorage, keď nejaké meno vymažeme pomocou tlačítka vymazať meno 
+*/
+
+const generateHTMLstructure = function(oneName){
+    const newDiv = document.createElement("div")
+    const newSpan = document.createElement("span")
+    const button = document.createElement("button")
+    
+
+    // nastavenie mazacieho tlačídla
+
+    button.textContent = "vymazať meno"
+    newDiv.appendChild(button)
+
+    newSpan.textContent = oneName.firstName
+    newDiv.appendChild(newSpan)
+
+
+
+    
+
+    return newDiv
 }
 

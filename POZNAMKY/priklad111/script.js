@@ -12,7 +12,7 @@
 
 const names = getSavedNames()
 
-
+// odoslanie formulára a uloženie do localStorage pomocou premennej names
 let myForm = document.querySelector("#test-form")
 myForm.addEventListener("submit", function (event) {
     event.preventDefault()
@@ -27,4 +27,20 @@ myForm.addEventListener("submit", function (event) {
     saveNames(names)
 
 
+})
+
+// vypisovanie späť do stránky
+
+let buttonToList = document.querySelector(".to-list")
+
+buttonToList.addEventListener("click", function(event){
+    let namesFromStorage = localStorage.getItem("names")
+    let namesFromStorageJSON = JSON.parse(namesFromStorage)
+
+    console.log(namesFromStorageJSON)
+
+    namesFromStorageJSON.forEach(function(myName){
+        const oneNameHTML = generateHTMLstructure(myName)
+        document.querySelector(".list-names").appendChild(oneNameHTML)
+    })
 })
