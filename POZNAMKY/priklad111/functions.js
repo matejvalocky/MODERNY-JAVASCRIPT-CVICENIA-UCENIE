@@ -31,7 +31,7 @@ const saveNames = function (oneName) {
 
 
 /* 
-Generovanie HTML štruktúry, ktorú umiestnime do sránky po kliknutí na stlačítko "Vyôíš"
+Generovanie HTML štruktúry, ktorú umiestnime do sránky po kliknutí na stlačítko "Vypíš"
 
 + použíjeme ju tiež pre vypísanie informácii z localStorage, keď nejaké meno vymažeme pomocou tlačítka vymazať meno 
 */
