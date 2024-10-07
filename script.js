@@ -3685,6 +3685,9 @@ nameFilter.addEventListener("input", function (event) {
 
 
 
+// 111. Moderní JavaScript - Miniprojekt vymazání položky: Ukázka co budeme tvořit
+// tu je len ukážka, žiadny kod sa nepise
+
 
 
 
