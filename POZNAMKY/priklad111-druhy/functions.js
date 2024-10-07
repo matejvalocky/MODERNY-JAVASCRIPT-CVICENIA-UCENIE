@@ -20,3 +20,17 @@ const getSavedNames = function () {
     return []; // vráti prázdne pole
   }
 };
+
+/*
+Funkcia pre použitie pri odoslaní formulára;
+ukladá do localStorage meno z formulara
+*/
+
+// uloženie mien
+const savedNames = function (oneName) {
+  // v oneName môže byť akýkoľvek názov, ktorý si popisne zadám
+  localStorage.setItem("names", JSON.stringify(oneName));
+  // rovno prevedieme do JSONu cez stringify
+  // names sme si zadefinovali, že kľúč sa tak bude volať
+  // môže to mať akýkoľvek názov (popisný - names)
+};

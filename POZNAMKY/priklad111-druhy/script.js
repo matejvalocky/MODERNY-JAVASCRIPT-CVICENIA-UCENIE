@@ -11,8 +11,9 @@ myForm.addEventListener("submit", function(event){
         firstName: event.target.elements.firstName.value // hodnota políčka
     })
 
+    event.target.elements.firstName.value = "" // vymazanie hodnoty políčka po kliknutí na submit
 
-
+    savedNames(names)
 
 
 })
