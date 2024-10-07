@@ -16,3 +16,19 @@ myForm.addEventListener("submit", function (event) {
 
   savedNames(names);
 });
+
+
+
+// vypisovanie späť do stránky
+
+
+let buttonToList = document.querySelector(".to-list") // zachytenie buttonu
+buttonToList.addEventListener("click", function(event){
+    let namesFromStorage = localStorage.getItem("names") // vytiahnutie dát z localStorage
+    let namesFromStorageJSON = JSON.parse(namesFromStorage) // prevedenie na pôvodny datovy typ
+   
+    namesFromStorageJSON.forEach(function(myName){
+        const oneNameHTML = generateHTMLstructure(myName)
+        document.querySelector(".list-names").appendChild(oneNameHTML)
+    })
+})

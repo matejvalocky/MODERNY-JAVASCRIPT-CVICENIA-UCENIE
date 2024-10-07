@@ -34,3 +34,30 @@ const savedNames = function (oneName) {
   // names sme si zadefinovali, že kľúč sa tak bude volať
   // môže to mať akýkoľvek názov (popisný - names)
 };
+
+
+
+
+
+
+/*
+Generovanie HTML štruktúry, ktorú umiestnime do stránky 
+po kliknutí na tlačítni "Vypíš"
++ použijeme ju tiež pre vypísanie nových informácii
+z localStorage, keď nejaké meno vymažeme pomocou
+tlačítka "Vymazať meno"
+*/
+
+const generateHTMLstructure = function(oneName){
+    const newDiv = document.createElement("div")
+    const newSpan = document.createElement("span")
+    const button = document.createElement("button") // mazacie tlačídlo
+
+    // nastavenie mazacieho tlačídla
+    button.textContent = "Vymazať meno"
+    newDiv.appendChild(button)
+
+    newSpan.textContent = oneName.firstName
+    newDiv.appendChild(newSpan)
+    return newDiv
+}
